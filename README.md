@@ -1,10 +1,14 @@
 # Seasonally Invariant Deep Transform for Visual Terrain-Relative Navigation
-This is the official model training code for our **Science Robotics** paper: [*A seasonally invariant deep transform for visual terrain-relative navigation*](https://www.science.org/stoken/author-tokens/ST-66/full) 
+This is the official training code for the models presented in **Science Robotics** paper: [*A seasonally invariant deep transform for visual terrain-relative navigation*](https://www.science.org/stoken/author-tokens/ST-66/full) 
+<div style="text-align: center;">
+    <img src="https://user-images.githubusercontent.com/6981697/205478279-75e8ee1c-16e6-441a-8cc1-e7efceaf1d60.png" width="36%">
+    <img src="https://user-images.githubusercontent.com/6981697/205478303-9a00237e-107b-41b6-8aaa-54694a1da4c6.png" width="59%">
+</div>
 
 ## Example Usage
 We will work with a toy dataset of raw orthorectified image pairs stored in `data/coregistered_images`.
 
-### Create your environment
+### Environment setup
 Create a python3 anaconda environment and use the `requirements.txt` file provided. Install any still-missing packages as needed. 
 ```
 pip3 install -r requirements.txt
@@ -18,7 +22,7 @@ python createTiledDataset_v2.py --raw_data_dir=data/coregistered_images/off --sa
 python createTiledDataset_v2.py --raw_data_dir=data/coregistered_images/on --save_data_dir=data/training_pairs/on --overlap_ratio=0 --crop_width=600 --crop_height 600
 ```
 
-### Deep transform for NCC-based registration
+### Training a deep transform for NCC-based registration
 To train a deep image transform to optimize downstream image registration based on normalized cross-correlation (NCC), run
 ```
 ### Just as an example, use training dataset for validation
@@ -35,7 +39,7 @@ python siamese-inference.py --data_dir data/samples/fakeplaceid_fakequad_000015_
     <img src="experiments/correlation-example/sample-outputs/fakeplaceid_fakequad_000015_on.png" width="49%">
 </div>
 
-### Deep Transform for SIFT-based registration
+### Training a deep transform for SIFT-based registration
 To optimize the image transform for a feature matching registration objective, run
 ```
 python siamese-sift.py --exp_name sift-example --training_data_dir=data/training_pairs/ --validation_data_dir=data/training_pairs/ --subsamples=100 --crop_width=64 --batch-size=2 --zeta=10 --gamma=1 --epochs=100
