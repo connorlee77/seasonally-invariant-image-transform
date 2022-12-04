@@ -1,5 +1,5 @@
 # Seasonally Invariant Deep Transform for Visual Terrain-Relative Navigation
-This is the official training code for the models presented in **Science Robotics** paper: [*A seasonally invariant deep transform for visual terrain-relative navigation*](https://www.science.org/stoken/author-tokens/ST-66/full) 
+This is the official training code for the models presented in the **Science Robotics** paper: [*A seasonally invariant deep transform for visual terrain-relative navigation*](https://www.science.org/stoken/author-tokens/ST-66/full) 
 <div style="text-align: center;">
     <img src="https://user-images.githubusercontent.com/6981697/205478279-75e8ee1c-16e6-441a-8cc1-e7efceaf1d60.png" width="36%">
     <img src="https://user-images.githubusercontent.com/6981697/205478303-9a00237e-107b-41b6-8aaa-54694a1da4c6.png" width="59%">
