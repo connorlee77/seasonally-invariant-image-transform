@@ -23,7 +23,7 @@ def inference(opt):
 
     # Load model
     model = UNet(n_channels=1, n_classes=1, bilinear=True)
-    model.load_state_dict(torch.load(opt.weights_path))
+    model.load_state_dict(torch.load(opt.weights_path, map_location='cpu'))
 
     # Set gpu stuff
     device = torch.device("cuda:" + devices[0] if torch.cuda.is_available() else "cpu")

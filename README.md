@@ -45,6 +45,10 @@ To optimize the image transform for a feature matching registration objective, r
 python siamese-sift.py --exp_name sift-example --training_data_dir=data/training_pairs/ --validation_data_dir=data/training_pairs/ --subsamples=100 --crop_width=64 --batch-size=2 --zeta=10 --gamma=1 --epochs=100
 ```
 
+## Notes
+- Training a NCC-optimized image transform should not be difficult. 
+- The feature-based transform is harder to train, and may require some hyperparameter tuning and loss balancing depending on your dataset (tip: start with just the detector loss and add in descriptor loss in small amounts if needed).   
+- For both transforms, the appearance of the transformed images may vary, depending on the characteristics (size, terrain variety, etc...) of the dataset used during training. 
 
 ## Working with a custom dataset
 
