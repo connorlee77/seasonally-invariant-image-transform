@@ -17,9 +17,9 @@ pip3 install -r requirements.txt
 ### Processing large orthorectified data
 To create the training dataset, run 
 ```
-python createTiledDataset_v2.py --raw_data_dir=data/coregistered_images/off --save_data_dir=data/training_pairs/off --overlap_ratio=0 --crop_width=600 --crop_height 600
+python createTiledDataset.py --raw_data_dir=data/coregistered_images/off --save_data_dir=data/training_pairs/off --overlap_ratio=0 --crop_width=600 --crop_height 600
 
-python createTiledDataset_v2.py --raw_data_dir=data/coregistered_images/on --save_data_dir=data/training_pairs/on --overlap_ratio=0 --crop_width=600 --crop_height 600
+python createTiledDataset.py --raw_data_dir=data/coregistered_images/on --save_data_dir=data/training_pairs/on --overlap_ratio=0 --crop_width=600 --crop_height 600
 ```
 
 ### Training a deep transform for NCC-based registration
@@ -42,7 +42,7 @@ python siamese-inference.py --data_dir data/samples/fakeplaceid_fakequad_000015_
 ### Training a deep transform for SIFT-based registration
 To optimize the image transform for a feature matching registration objective, run
 ```
-python siamese-sift.py --exp_name sift-example --training_data_dir=data/training_pairs/ --validation_data_dir=data/training_pairs/ --subsamples=100 --crop_width=64 --batch-size=2 --zeta=10 --gamma=1 --epochs=100
+python siamese-sift.py --exp_name sift-toy-example --training_data_dir=data/training_pairs/ --validation_data_dir=data/training_pairs/ --subsamples=100 --crop_width=64 --batch-size=2 --zeta=10 --gamma=1 --epochs=100
 ```
 
 ## Notes
